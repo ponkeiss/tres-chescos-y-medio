@@ -14,6 +14,7 @@
     <div class="titulo">
         <h1>Login</h1>
     </div>
+    // ingresar info
     <form method="POST" action="">
         <label for="user">Nombre de usuario:</label>
         <br>
@@ -23,30 +24,41 @@
         <br>
         <input type="string" step="any" name="pass" id="pass" required>
         <br><br>
-        <button type="submit" name="login">login</button>
+        <button type="submit" name="login">Login</button>
         <br><br>
     </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) { 
+        // guardar valores
         $u = strval($_POST['user']); 
         $p = strval($_POST['pass']);
         $user = 0;
         if (isset($_SESSION['user_reg'])) {
+            // confirmar el usuario
             foreach ($_SESSION['user_reg'] as $us) {
                 if ($us['user'] === $u && $us['pass'] === $p) {
                     $user = 1;
-                    $_SESSION['usuario_activo'] = $us['name'];
+                    $_SESSION['user_act'] = $us['name'];
                     break;
                 }
             }
         }
         if ($user) {
+            // enviar a la pagina principal
             header("Location: principal.php");
             exit(); 
         } else {
-            $error = "Usuario o contraseña incorrectos.";
+            // mostrar error
+            $error = "Usuario o contraseña incorrectos";
         }
     }
     ?>
+    // boton para volver al registro
+    <br>
+    <div>
+        <a href="registro.php">
+            <button type="button">Registrarse</button>
+        </a>
+    </div>
 </body>
 </html>

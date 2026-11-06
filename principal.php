@@ -12,5 +12,12 @@
         <h2>Estas dentro Bv</h2>
     </div>
     <img src="img/img_principal.jpg" alt="">
+    <br>
+    // boton de salidita
+    <div>
+        <a href="login.php">
+            <button type="button">Cerrar Sesión</button>
+        </a>
+    </div>
 </body>
 </html>

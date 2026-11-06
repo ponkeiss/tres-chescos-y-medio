@@ -17,6 +17,7 @@
     <div class="texto">
         <p>Completa el formulario de registro</p>
     </div>
+    // formulario de registro
     <form method="POST" action="">
         <label for="string">Nombre:</label>
         <br>
@@ -39,11 +40,13 @@
     </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registrar'])) {
+        // guardar valores
         $n = strval($_POST['name']); 
         $u = strval($_POST['user']); 
         $p = strval($_POST['pass']); 
         $pc = strval($_POST['pass_cf']); 
         if ( (strlen($p) >= 6) && ($p == $pc) ){
+            // hacer el registro
             if (isset($_SESSION['user_reg']) && in_array($u, array_column($_SESSION['user_reg'], 'user'))) {
                 echo "<p>El nombre de usuario ' $u ' no esta disponible</p>";
             } else {
@@ -57,5 +60,11 @@
         }
     }
     ?>
+    <br>
+    <div>
+        <a href="login.php">
+            <button type="button">Ir al login</button>
+        </a>
+    </div>
 </body>
 </html>
