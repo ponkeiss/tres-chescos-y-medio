@@ -13,9 +13,10 @@
 <body>
     <div class="titulo">
         <h1>Login</h1>
+        <br>
     </div>
-    // ingresar info
-    <form method="POST" action="">
+    <!-- ingresar info -->
+    <form method="POST" action="" class="login">
         <label for="user">Nombre de usuario:</label>
         <br>
         <input type="string" step="any" name="user" id="user" required>
@@ -53,9 +54,9 @@
         }
     }
     ?>
-    // boton para volver al registro
+    <!-- boton para volver al registro -->
     <br>
-    <div>
+    <div class="btn">
         <a href="registro.php">
             <button type="button">Registrarse</button>
         </a>

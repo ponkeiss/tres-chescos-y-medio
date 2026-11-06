@@ -1,0 +1,49 @@
+html{
+    background-color: rgb(252, 210, 251);
+}
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    background-color:rgb(253, 242, 145);
+    border: rgb(121, 82, 23) 15px dotted;
+    padding: 15px;
+    text-align: justify;
+    margin: 20px auto;
+    width: 1200px;
+    height: 550px;
+    position: relative;
+}
+form{
+    text-align: left;
+    color:rgb(152, 106, 0);
+    letter-spacing: .2em;
+    margin: 0;
+}
+.login{
+    text-align: center;
+    font-size: 25px;
+}
+.titulo{
+    text-align: center;
+    color:rgb(59, 50, 21);
+    letter-spacing: .2em;
+    margin: 0;
+}
+.texto{
+    text-align: left;
+    color:rgb(42, 33, 7);
+    letter-spacing: .2em;
+    margin: 0;
+}
+.img{
+    width: 450px;
+    height: 350px;
+    display: block;   
+    margin-left: auto; 
+    margin-right: auto;
+}
+.btn{
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+}

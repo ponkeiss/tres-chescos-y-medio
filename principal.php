@@ -11,10 +11,10 @@
         <h1>Felicidades tilin!!</h1>
         <h2>Estas dentro Bv</h2>
     </div>
-    <img src="img/img_principal.jpg" alt="">
+        <img src="img/img_principal.jpg" class="img" alt="">
     <br>
-    // boton de salidita
-    <div>
+    <!-- boton de salidita -->
+    <div class="btn">
         <a href="login.php">
             <button type="button">Cerrar Sesión</button>
         </a>

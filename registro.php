@@ -17,7 +17,7 @@
     <div class="texto">
         <p>Completa el formulario de registro</p>
     </div>
-    // formulario de registro
+    <!-- formulario de registro -->
     <form method="POST" action="">
         <label for="string">Nombre:</label>
         <br>
@@ -61,7 +61,7 @@
     }
     ?>
     <br>
-    <div>
+    <div class="btn">
         <a href="login.php">
             <button type="button">Ir al login</button>
         </a>
