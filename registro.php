@@ -1,5 +1,5 @@
 <?php 
-    // 1. Iniciar la sesión al principio de todo
+    //Iniciar la sesión al principio de todo
     session_start(); 
 ?>
 <!DOCTYPE html>
@@ -44,11 +44,16 @@
         $p = strval($_POST['pass']); 
         $pc = strval($_POST['pass_cf']); 
         if ( (strlen($p) >= 6) && ($p == $pc) ){
-            $datos = [$n, $u, $p, $pc];
-            // 2. Guardamos el arreglo dentro de una variable de sesión
-            $_SESSION['usuario'] = $datos;
+            if (isset($_SESSION['user_reg']) && in_array($u, array_column($_SESSION['user_reg'], 'user'))) {
+                echo "<p>El nombre de usuario ' $u ' no esta disponible</p>";
+            } else {
+                $datos = ['name' => $n, 'user' => $u, 'pass' => $p];
+                // Guardamos en una lista de usuarios dentro de la sesión
+                $_SESSION['user_reg'][] = $datos;
+                echo "<p>Se registró correctamente el usuario</p>";
+            }
         }else{
-
+            echo "<p>Revisa que tu contraseña y la confirmación coincidan y que incluya al menos 6 caracteres.</p>";
         }
     }
     ?>

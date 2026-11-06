@@ -1,5 +1,5 @@
 <?php
-    // 1. Iniciar la sesión al principio de todo
+    //Iniciar la sesión al principio de todo
     session_start(); 
 ?>
 <!DOCTYPE html>
@@ -29,12 +29,22 @@
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) { 
         $u = strval($_POST['user']); 
-        $p = strval($_POST['pass']); 
-        $datos = $_SESSION['usuario'];
-        if ( ($datos[1] == $u) && ($datos[3] == $p) ){
-            
-        }else{
-
+        $p = strval($_POST['pass']);
+        $user = 0;
+        if (isset($_SESSION['user_reg'])) {
+            foreach ($_SESSION['user_reg'] as $us) {
+                if ($us['user'] === $u && $us['pass'] === $p) {
+                    $user = 1;
+                    $_SESSION['usuario_activo'] = $us['name'];
+                    break;
+                }
+            }
+        }
+        if ($user) {
+            header("Location: principal.php");
+            exit(); 
+        } else {
+            $error = "Usuario o contraseña incorrectos.";
         }
     }
     ?>
