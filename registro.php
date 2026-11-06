@@ -7,10 +7,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css" type="text/css">
+    <link rel="stylesheet" href="estilitos.css" type="text/css">
     <title>Hola :D</title>
 </head>
-<body class="body-index">
+<body>
     <div class="titulo">
         <h1>Registro</h1>
     </div>
@@ -45,9 +45,6 @@
         $pc = strval($_POST['pass_cf']); 
         if ( (strlen($p) >= 6) && ($p == $pc) ){
             $datos = [$n, $u, $p, $pc];
-            foreach ($datos as $r) {
-                echo $r . "\n";
-            }
             // 2. Guardamos el arreglo dentro de una variable de sesión
             $_SESSION['usuario'] = $datos;
         }else{

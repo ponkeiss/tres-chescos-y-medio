@@ -7,10 +7,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css" type="text/css">
+    <link rel="stylesheet" href="estilitos.css" type="text/css">
     <title>Hola :D</title>
 </head>
-<body class="body-index">
+<body>
     <div class="titulo">
         <h1>Login</h1>
     </div>
