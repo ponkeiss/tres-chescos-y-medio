@@ -10,7 +10,8 @@ body{
     text-align: justify;
     margin: 20px auto;
     width: 1200px;
-    height: 550px;
+    height: auto;
+    min-height: 550px;
     position: relative;
 }
 form{
@@ -46,4 +47,15 @@ form{
     position: absolute;
     bottom: 25px;
     right: 25px;
+}
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.form .images {
+    height: auto;
+    width: 250px;
+    border-radius: 8px;
 }

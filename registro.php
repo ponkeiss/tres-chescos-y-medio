@@ -18,7 +18,9 @@
         <p>Completa el formulario de registro</p>
     </div>
     <!-- formulario de registro -->
-    <form method="POST" action="">
+    <form method="POST" action="" class="form">
+        <img src="img/img_reg.jpg" class="images" alt="">
+        <div>
         <label for="string">Nombre:</label>
         <br>
         <input type="string" step="any" name="name" id="name" required>
@@ -37,20 +39,23 @@
         <br><br>
         <button type="submit" name="registrar">Registrar</button>
         <br><br>
+        </div>
     </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registrar'])) {
         // guardar valores
         $n = strval($_POST['name']); 
         $u = strval($_POST['user']); 
-        $p = strval($_POST['pass']); 
-        $pc = strval($_POST['pass_cf']); 
+        $p = strval($_POST['pass']);
+        $pc = strval($_POST['pass_cf'],); 
+        
         if ( (strlen($p) >= 6) && ($p == $pc) ){
+            $p = password_hash($p, PASSWORD_DEFAULT);
             // hacer el registro
             if (isset($_SESSION['user_reg']) && in_array($u, array_column($_SESSION['user_reg'], 'user'))) {
                 echo "<p>El nombre de usuario ' $u ' no esta disponible</p>";
             } else {
-                $datos = ['name' => $n, 'user' => $u, 'pass' => $p];
+                $datos = ['name' => $n, 'user' => $u, 'pass' => $p ];
                 // Guardamos en una lista de usuarios dentro de la sesión
                 $_SESSION['user_reg'][] = $datos;
                 echo "<p>Se registró correctamente el usuario</p>";

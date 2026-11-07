@@ -16,7 +16,9 @@
         <br>
     </div>
     <!-- ingresar info -->
-    <form method="POST" action="" class="login">
+    <form method="POST" action="" class="form">
+        <img src="img/img_log.jpg" class="images" alt="">
+        <div>
         <label for="user">Nombre de usuario:</label>
         <br>
         <input type="string" step="any" name="user" id="user" required>
@@ -27,6 +29,7 @@
         <br><br>
         <button type="submit" name="login">Login</button>
         <br><br>
+        </div>
     </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) { 
@@ -37,7 +40,7 @@
         if (isset($_SESSION['user_reg'])) {
             // confirmar el usuario
             foreach ($_SESSION['user_reg'] as $us) {
-                if ($us['user'] === $u && $us['pass'] === $p) {
+                if ($us['user'] === $u && password_verify($p, $us['pass'])) {
                     $user = 1;
                     $_SESSION['user_act'] = $us['name'];
                     break;
